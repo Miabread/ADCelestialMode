@@ -496,5 +496,24 @@ export const tabs = [
         hidable: true
       }
     ]
+  },
+  {
+    key: "force",
+    name: "Force",
+    newUIClass: "force",
+    hideAt: 1.5,
+    UIClass: "o-tab-btn--force",
+    id: 11,
+    hidable: true,
+    subtabs: [
+      {
+        key: "force",
+        name: "Force",
+        symbol: "!",
+        component: "ForceTab",
+        id: 0,
+        hidable: true
+      }
+    ]
   }
 ];
