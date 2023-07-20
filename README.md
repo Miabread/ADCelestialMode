@@ -1,27 +1,78 @@
-# Antimatter Dimensions
+# [Antimatter Dimensions: Force Mod](https://miabread.github.io/AntimatterDimensions/)
 
-## Run
+Ever wanted to start the game with continuum enabled? Well now you can! This mod turns any hard coded unlock condition into a save file flag that can be much easily modified.
 
-To run the game locally, you will need to install
-[Node.js](https://nodejs.org/) (LTS suggested).
+"Force flags" have been injected into various unlock conditions throughout the game. When set to true, said unlock will always be true regardless of it's original condition. These can be modified in the console by messing around with the newly added `player.force` object.
 
-(As of right now we can only confirm that this repo builds properly on node v16, so for now you should ensure you have that main version to build AD. We are looking into this at the moment.)
+**Some force-flags will very likely break or bug the game! Keep this in mind!**
 
-First, run the following command in your terminal (or command line) while being
-inside the checked out repository:
+## Future 
 
+More force flags will be added as I dig into the code. Feel free to leave an issue or pull request if there's anything you'd like added!
+
+I am currently attempting to add a GUI for these as well.
+
+## Quick Reference
+
+The following is a quick reference for all the current force-flags:
+
+```js
+  force: {
+    antimatter: {
+      challengeCompleted: false,
+      tickspeedUnlocked: false,
+    },
+    infinity: {
+      isUnlocked: false,
+      hasBroken: false,
+      infinityChallengeCompleted: false,
+    },
+    eternity: {
+      isUnlocked: false,
+      seenAlteredSpeed: false,
+    },
+    reality: {
+      isUnlocked: false,
+      alchemyUnlocked: false,
+      blackHoleUnlocked: false,
+    },
+    celestials: {
+      teresa: {
+        isUnlocked: false,
+      },
+      effarig: {},
+      enslaved: {
+        isUnlocked: false,
+        canAmplify: false,
+        canModifyGameTimeStorage: false,
+        canModifyRealTimeStorage: false,
+        isStoredRealTimeCapped: false,
+        isStoringGameTime: false,
+        isStoringRealTime: false,
+        isAutoReleasing: false,
+      },
+      V: {
+        canUnlock: false,
+        isFullyCompleted: false,
+      },
+      ra: {
+        isUnlocked: false,
+        remembranceUnlocked: false,
+        alteredGlyphsUnlocked: false,
+      },
+      laitela: {
+        isUnlocked: false,
+        continuumUnlocked: false,
+        annihilationUnlocked: false,
+      },
+      pelle: {
+        isUnlocked: false,
+      }
+    },
+    meta: {
+      hasFullCompletion: false,
+      allTabsUnlocked: false,
+      allSubtabsUnlocked: false,
+    }
+  },
 ```
-npm ci
-```
-
-After all the packages are installed, start up the game:
-
-```
-npm run serve
-```
-
-This will make the game served via your localhost, and the playable link will
-be displayed in your terminal. The server **doesn't** need to be restarted
-after you've made changes - just reload the page. The server **can**
-occasionally crash, so check your terminal from time to time and run `serve`
-again if needed.
