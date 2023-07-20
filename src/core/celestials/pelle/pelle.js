@@ -125,6 +125,7 @@ export const Pelle = {
   },
 
   get isUnlocked() {
+    if (player.force.celestials.pelle.isUnlocked) return true;
     return ImaginaryUpgrade(25).isBought;
   },
   // This will check if a specific mechanic is disabled, like old PelleFlag(x).isActive,

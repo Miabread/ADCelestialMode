@@ -174,6 +174,7 @@ export const V = {
     }
   },
   get canUnlockCelestial() {
+    if (player.force.celestials.V.canUnlock) return true;
     return VUnlocks.vAchievementUnlock.canBeUnlocked;
   },
   unlockCelestial() {
@@ -217,6 +218,7 @@ export const V = {
     return Ra.unlocks.unlockHardV.isUnlocked;
   },
   get isFullyCompleted() {
+    if (player.force.celestials.V.isFullyCompleted) return true;
     return this.spaceTheorems >= 66;
   },
   nextNormalReductionCost() {

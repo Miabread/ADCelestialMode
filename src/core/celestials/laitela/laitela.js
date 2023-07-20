@@ -10,6 +10,7 @@ export const Laitela = {
     return player.celestials.laitela;
   },
   get isUnlocked() {
+    if (player.force.celestials.laitela.isUnlocked) return true;
     return ImaginaryUpgrade(15).isBought;
   },
   initializeRun() {
@@ -32,6 +33,7 @@ export const Laitela = {
     return Laitela.maxAllowedDimension === 0;
   },
   get continuumUnlocked() {
+    if (player.force.celestials.laitela.continuumUnlocked) return true;
     return ImaginaryUpgrade(15).isBought && !Pelle.isDisabled("continuum");
   },
   get continuumActive() {
@@ -67,6 +69,7 @@ export const Laitela = {
     return (this.celestial.darkMatterMult + this.darkMatterMultGain) / this.celestial.darkMatterMult;
   },
   get annihilationUnlocked() {
+    if (player.force.celestials.laitela.annihilationUnlocked) return true;
     return ImaginaryUpgrade(19).isBought;
   },
   get annihilationDMRequirement() {

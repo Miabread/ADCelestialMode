@@ -235,6 +235,7 @@ export const Ra = {
     nerf: 0.5,
     requiredLevels: 20,
     get isUnlocked() {
+      if (player.force.celestials.ra.remembranceUnlocked) return true;
       return Ra.totalPetLevel >= this.requiredLevels;
     }
   },
@@ -335,6 +336,7 @@ export const Ra = {
     return Math.min(10, Math.max(0, Currency.timeTheorems.value.pLog10() - 350) / 50);
   },
   get isUnlocked() {
+    if (player.force.celestials.ra.isUnlocked) return true;
     return V.spaceTheorems >= 36;
   },
   get isRunning() {

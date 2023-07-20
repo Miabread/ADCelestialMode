@@ -55,22 +55,27 @@ export const Enslaved = {
     player.celestials.enslaved.autoStoreReal = !player.celestials.enslaved.autoStoreReal;
   },
   get canModifyGameTimeStorage() {
+    if (player.force.celestials.enslaved.canModifyGameTimeStorage) return true;
     return Enslaved.isUnlocked && !Pelle.isDoomed && !BlackHoles.arePaused && !EternityChallenge(12).isRunning &&
       !Enslaved.isRunning && !Laitela.isRunning;
   },
   get canModifyRealTimeStorage() {
+    if (player.force.celestials.enslaved.canModifyRealTimeStorage) return true;
     return Enslaved.isUnlocked && !Pelle.isDoomed;
   },
   get isStoredRealTimeCapped() {
+    if (player.force.celestials.enslaved.isStoredRealTimeCapped) return true;
     return player.celestials.enslaved.storedReal < this.storedRealTimeCap;
   },
   // We assume that the situations where you can't modify time storage settings (of either type) are exactly the cases
   // where they have also been explicitly disabled via other game mechanics. This also reduces UI boilerplate code.
   // Note that we force time storage when auto-releasing, as not doing so caused a lot of poor usability issues
-  get isStoringGameTime() {
+  get isStoringGameTime() {    
+    if (player.force.celestials.enslaved.isStoringGameTime) return true;
     return this.canModifyGameTimeStorage && (this.isAutoReleasing || player.celestials.enslaved.isStoring);
   },
   get isStoringRealTime() {
+    if (player.force.celestials.enslaved.isStoringRealTime) return true;
     return this.canModifyRealTimeStorage && player.celestials.enslaved.isStoringReal;
   },
   get storedRealTimeEfficiency() {
@@ -81,6 +86,7 @@ export const Enslaved = {
     return 1000 * 3600 * 8 + addedCap;
   },
   get isAutoReleasing() {
+    if (player.force.celestials.enslaved.isAutoReleasing) return true;
     return player.celestials.enslaved.isAutoReleasing && !BlackHoles.areNegative && !Pelle.isDisabled("blackhole");
   },
   storeRealTime() {
@@ -178,6 +184,7 @@ export const Enslaved = {
     return !EnslavedProgress.hintsUnlocked.hasProgress && Enslaved.has(ENSLAVED_UNLOCKS.RUN) && !Enslaved.isCompleted;
   },
   get isUnlocked() {
+    if (player.force.celestials.enslaved.isUnlocked) return true;
     return EffarigUnlock.eternity.isUnlocked;
   },
   get realityBoostRatio() {
@@ -185,6 +192,7 @@ export const Enslaved = {
       Math.max(1000, Time.thisRealityRealTime.totalMilliseconds)));
   },
   get canAmplify() {
+    if (player.force.celestials.enslaved.canAmplify) return true;
     return this.realityBoostRatio > 1 && !Pelle.isDoomed && !isInCelestialReality();
   },
   storedTimeInsideEnslaved(stored) {

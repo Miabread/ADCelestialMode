@@ -9,6 +9,40 @@ import { GlyphTypes } from "./glyph-effects";
 // This is actually reassigned when importing saves
 // eslint-disable-next-line prefer-const
 window.player = {
+  force: {
+    celestials: {
+      teresa: {
+        isUnlocked: false,
+      },
+      effarig: {},
+      enslaved: {
+        isUnlocked: false,
+        canAmplify: false,
+        canModifyGameTimeStorage: false,
+        canModifyRealTimeStorage: false,
+        isStoredRealTimeCapped: false,
+        isStoringGameTime: false,
+        isStoringRealTime: false,
+        isAutoReleasing: false,
+      },
+      V: {
+        canUnlock: false,
+        isFullyCompleted: false,
+      },
+      ra: {
+        isUnlocked: false,
+        remembranceUnlocked: false,
+      },
+      laitela: {
+        isUnlocked: false,
+        continuumUnlocked: false,
+        annihilationUnlocked: false,
+      },
+      pelle: {
+        isUnlocked: false,
+      }
+    }
+  },
   antimatter: DC.E1,
   dimensions: {
     antimatter: Array.range(0, 8).map(() => ({
