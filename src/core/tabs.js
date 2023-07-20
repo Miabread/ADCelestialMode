@@ -27,6 +27,7 @@ class SubtabState {
   }
 
   get isUnlocked() {
+    if (player.force.meta.allSubtabsUnlocked) return true;
     return this.config.condition === undefined || this.config.condition();
   }
 
@@ -122,6 +123,7 @@ class TabState {
   }
 
   get isUnlocked() {
+    if (player.force.meta.allTabsUnlocked) return true;
     return this.config.condition === undefined || this.config.condition();
   }
 

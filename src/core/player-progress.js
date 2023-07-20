@@ -4,6 +4,7 @@ export class PlayerProgress {
   }
 
   get isInfinityUnlocked() {
+    if (this._player.force.infinity.isUnlocked) return true;
     // Infinity count data is stored in either player.infinitied or player.infinities based on if the save is before
     // or after the reality update, but this also gets checked in the import modal before any migration code is run.
     // Thus, it needs to manually support "before" and "after" states by converting both to Decimal.
@@ -12,15 +13,18 @@ export class PlayerProgress {
   }
 
   get isEternityUnlocked() {
+    if (this._player.force.eternity.isUnlocked) return true;
     // Similarly to above, player.eternities is a number pre-reality update and a Decimal post-reality update
     return new Decimal(this._player.eternities).gt(0) || this.isRealityUnlocked;
   }
 
   get isRealityUnlocked() {
+    if (this._player.force.reality.isUnlocked) return true;
     return this._player.realities > 0;
   }
 
   get hasFullCompletion() {
+    if (this._player.force.meta.hasFullCompletion) return true;
     return this._player.records?.fullGameCompletions > 0;
   }
 
@@ -37,6 +41,7 @@ export class PlayerProgress {
   }
 
   static hasBroken() {
+    if (player.force.infinity.hasBroken) return true;
     return player.break || this.isEternityUnlocked || this.isRealityUnlocked;
   }
 
@@ -57,15 +62,18 @@ export class PlayerProgress {
   }
 
   static seenAlteredSpeed() {
+    if (player.force.eternity.seenAlteredSpeed) return true;
     const ec12 = EternityChallenge(12);
     return this.realityUnlocked() || ec12.completions > 0 || ec12.isRunning;
   }
 
   static challengeCompleted() {
+    if (player.force.antimatter.challengeCompleted) return true;
     return NormalChallenges.all.slice(1).some(c => c.isCompleted);
   }
 
   static infinityChallengeCompleted() {
+    if (player.force.infinity.infinityChallengeCompleted) return true;
     return InfinityChallenges.all.some(c => c.isCompleted);
   }
 }

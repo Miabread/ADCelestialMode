@@ -138,6 +138,7 @@ class BlackHoleState {
   }
 
   get isUnlocked() {
+    if (player.force.reality.blackHoleUnlocked) return true;
     return this._data.unlocked && !Enslaved.isRunning && !Pelle.isDisabled("blackhole");
   }
 

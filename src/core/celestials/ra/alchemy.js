@@ -63,6 +63,7 @@ class AlchemyResourceState extends GameMechanicState {
   }
 
   get isUnlocked() {
+    if (player.force.reality.alchemyUnlocked) return true;
     return this.unlockedWith.level >= this.unlockedAt;
   }
 

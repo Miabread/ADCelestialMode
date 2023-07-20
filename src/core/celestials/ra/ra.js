@@ -407,6 +407,7 @@ export const GlyphAlteration = {
     return sacPower;
   },
   get isUnlocked() {
+    if (player.force.celestials.ra.alteredGlyphsUnlocked) return true;
     if (Pelle.isDisabled("alteration")) return false;
     return Ra.unlocks.alteredGlyphs.canBeApplied;
   },

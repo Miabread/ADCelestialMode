@@ -9,7 +9,26 @@ import { GlyphTypes } from "./glyph-effects";
 // This is actually reassigned when importing saves
 // eslint-disable-next-line prefer-const
 window.player = {
+  // if (player.force.reality.alchemyUnlocked) return true;
   force: {
+    antimatter: {
+      challengeCompleted: false,
+      tickspeedUnlocked: false,
+    },
+    infinity: {
+      isUnlocked: false,
+      hasBroken: false,
+      infinityChallengeCompleted: false,
+    },
+    eternity: {
+      isUnlocked: false,
+      seenAlteredSpeed: false,
+    },
+    reality: {
+      isUnlocked: false,
+      alchemyUnlocked: false,
+      blackHoleUnlocked: false,
+    },
     celestials: {
       teresa: {
         isUnlocked: false,
@@ -32,6 +51,7 @@ window.player = {
       ra: {
         isUnlocked: false,
         remembranceUnlocked: false,
+        alteredGlyphsUnlocked: false,
       },
       laitela: {
         isUnlocked: false,
@@ -41,6 +61,11 @@ window.player = {
       pelle: {
         isUnlocked: false,
       }
+    },
+    meta: {
+      hasFullCompletion: false,
+      allTabsUnlocked: false,
+      allSubtabsUnlocked: false,
     }
   },
   antimatter: DC.E1,
