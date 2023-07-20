@@ -19,6 +19,9 @@ export default {
 
 <template>
   <div>
+    <h1><a href="https://github.com/Miabread/AntimatterDimensions" target="_blank">AD: Force Mod</a></h1>
+    <h2>Created by Miabread</h2>
+
     <div v-for="(subtopics, topic) in force">
       <h1>{{ topic }}</h1>
       <div v-for="(value, key) in subtopics">
