@@ -74,6 +74,8 @@ html {
   --color-notification: red;
   --color-overlay: rgba(30, 30, 50, 70%);
 
+  --color-celmode: #F5A9B8;
+
   --color-antimatter: #2196f3;
   --color-infinity: #b67f33;
   --color-eternity: #b341e0;
@@ -754,14 +756,14 @@ button:focus {
   background: var(--color-celestials);
 }
 
-.o-tab-btn--force {
-  color: var(--color-reality);
-  background-color: black;
-  border-color: var(--color-celestials);
+.o-tab-btn--celmode {
+  color: var(--color-celmode);
+  background-color:  var(--color-prestige--accent);
+  border-color: var(--color-celmode);
 }
 
-.o-tab-btn--force:hover {
-  background: var(--color-reality);
+.o-tab-btn--celmode:hover {
+  background: var(--color-celmode);
 }
 
 /* #endregion tab buttons */
