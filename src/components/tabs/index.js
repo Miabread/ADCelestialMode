@@ -42,6 +42,7 @@ import TimeDimensionsTab from "./time-dimensions/TimeDimensionsTab";
 import TimeStudiesTab from "./time-studies/TimeStudiesTab";
 import VTab from "./celestial-v/VTab";
 import ForceTab from "./force/ForceTab";
+import RawEditorTab from "./force/RawEditorTab";
 
 const TabComponents = {
   AntimatterDimensionsTab,
@@ -87,6 +88,7 @@ const TabComponents = {
   ShopTab,
   MultiplierBreakdownTab,
   ForceTab,
+  RawEditorTab,
 };
 
 export default TabComponents;

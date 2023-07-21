@@ -513,6 +513,14 @@ export const tabs = [
         component: "ForceTab",
         id: 0,
         hidable: true
+      },
+      {
+        key: "raw editor",
+        name: "Raw Editor",
+        symbol: "<i class='fas fa-code'></i>",
+        component: "RawEditorTab",
+        id: 1,
+        hidable: true
       }
     ]
   }
