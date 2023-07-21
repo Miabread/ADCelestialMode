@@ -1,4 +1,4 @@
-# [Antimatter Dimensions: Celestial Mode](https://miabread.github.io/AntimatterDimensions/)
+# [Antimatter Dimensions: Celestial Mode](https://miabread.github.io/ADCelestialMode/)
 
 Work In Progress save editor for AD!
 

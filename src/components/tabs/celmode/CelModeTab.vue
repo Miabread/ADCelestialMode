@@ -16,7 +16,7 @@ export default {
   <div>
     <h1>
       <a
-        href="https://github.com/Miabread/AntimatterDimensions"
+        href="https://github.com/Miabread/ADCelestialMode"
         target="_blank"
       >Antimatter Dimensions: Celestial Mode</a>
     </h1>
