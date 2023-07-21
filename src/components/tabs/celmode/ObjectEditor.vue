@@ -59,6 +59,7 @@ export default {
       :value="open" @input="open = $event"  
       off="▶" on="▼" />
     <div v-if="open" v-for="key in keys">
+        <br/>
         <ObjectEditor 
             v-if="is(key, 'object')"
             :path="[...path, key]"

@@ -14,14 +14,17 @@ export default {
 
 <template>
   <div>
-    <h1>
+    <h1 class="celmode-header">
+      Antimatter Dimensions: Celestial Mode
+    </h1>
+    <h2 class="celmode-header">Created by Miabread</h2>
+    <h2>
       <a
         href="https://github.com/Miabread/ADCelestialMode"
-        target="_blank"
-      >Antimatter Dimensions: Celestial Mode</a>
-    </h1>
-    <h2>Created by Miabread</h2>
+        target="_blank">GitHub</a>
+    </h2>
 
+    <br/>
     <h1>Dev Methods</h1>
     <h2>These methods were created by the AD developers.</h2>
     <div class="l-options-grid">
@@ -59,6 +62,7 @@ export default {
       </div>
     </div>
 
+    <br/>
     <h1>Animation Playback</h1>
 
     <div class="l-options-grid">
@@ -120,5 +124,7 @@ export default {
 </template>
 
 <style scoped>
-
+.celmode-header {
+  color: var(--color-celmode)
+}
 </style>
