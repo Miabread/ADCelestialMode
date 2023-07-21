@@ -498,19 +498,19 @@ export const tabs = [
     ]
   },
   {
-    key: "force",
-    name: "Force",
-    newUIClass: "force",
+    key: "celmode",
+    name: "CelMode",
+    newUIClass: "celmode",
     hideAt: 1.5,
-    UIClass: "o-tab-btn--force",
+    UIClass: "o-tab-btn--celmode",
     id: 11,
     hidable: true,
     subtabs: [
       {
-        key: "force",
-        name: "Force",
-        symbol: "!",
-        component: "ForceTab",
+        key: "info",
+        name: "CelMode",
+        symbol: "λ",
+        component: "CelModeTab",
         id: 0,
         hidable: true
       },

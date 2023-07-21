@@ -209,7 +209,7 @@ export const Tabs = (function() {
       Tab.reality,
       Tab.celestials,
       Tab.shop,
-      Tab.force,
+      Tab.celmode,
     ],
     newUI: [
       Tab.dimensions,
@@ -223,7 +223,7 @@ export const Tabs = (function() {
       Tab.statistics,
       Tab.options,
       Tab.shop,
-      Tab.force,
+      Tab.celmode,
     ],
     get currentUIFormat() {
       return ui.view.newUI ? this.newUI : this.oldUI;

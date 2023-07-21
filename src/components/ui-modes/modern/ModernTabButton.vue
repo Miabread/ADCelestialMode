@@ -136,6 +136,10 @@ export default {
   background-color: var(--color-celestials);
 }
 
+.o-tab-btn--celmode::before {
+  background-color: var(--color-celmode);
+}
+
 .o-subtab-btn--active {
   border-bottom-width: 0.5rem;
 }
