@@ -11,14 +11,27 @@ export default {
   },
   props: ['path'],
   data() {
+    // Treat top level specially 
+    if (this.path.length === 0) {
+      return {
+        open: true,
+        keys: Object.keys(player).filter(it => it !== 'rawEditor'),
+      }
+    }
+    
     return { 
-        open: this.path.length === 0, 
-        keys: Object.keys(this.path.length > 0 ? mb(this.path)(player) : player) 
+        open: player.rawEditor.openStates[this.path.join('.')] ?? false, 
+        keys: Object.keys(mb(this.path)(player)) 
     };
   },
   computed: {
     label() {
         return this.path.join('.');
+    }
+  },
+  watch: {
+    open() {
+      player.rawEditor.openStates[this.label] = this.open;
     }
   },
   methods: {
@@ -40,7 +53,11 @@ export default {
 
 <template>
   <div>
-    <PrimaryToggleButton :label="label" :value="open" @input="open = $event" v-if="path.length > 0" off="▶" on="▼" />
+    <PrimaryToggleButton 
+      v-if="path.length > 0"
+      :label="label" 
+      :value="open" @input="open = $event"  
+      off="▶" on="▼" />
     <div v-if="open" v-for="key in keys">
         <ObjectEditor 
             v-if="is(key, 'object')"

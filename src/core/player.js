@@ -9,7 +9,9 @@ import { GlyphTypes } from "./glyph-effects";
 // This is actually reassigned when importing saves
 // eslint-disable-next-line prefer-const
 window.player = {
-  // If (player.force.reality.alchemyUnlocked) return true;
+  rawEditor: {
+    openStates: {},
+  },
   force: {
     antimatter: {
       challengeCompleted: false,

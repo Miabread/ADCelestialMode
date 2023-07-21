@@ -19,9 +19,14 @@ export default {
         return [...this.path, this.name].join('.');
     }
   },
+  watch: {
+    value() {
+      mb(this.path)(player)[this.name] = !!this.value;
+    }
+  },
   methods: {
     update() {
-      mb(this.path)(player)[this.name] = !!this.value;
+      this.value = mb(this.path)(player)[this.name];
     }
   }
 };
