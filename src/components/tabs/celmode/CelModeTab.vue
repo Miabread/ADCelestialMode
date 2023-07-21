@@ -28,7 +28,7 @@ export default {
       <div class="l-options-grid__row">
         <OptionsButton
           class="o-primary-btn--option"
-          onclick="dev.giveAllAchievements()"
+          onclick="() => { dev.giveAllAchievements(); dev.removeAch(188) }"
         >
           Give All Achievements
         </OptionsButton>
