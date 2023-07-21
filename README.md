@@ -1,14 +1,19 @@
-# [Antimatter Dimensions: Force Mod](https://miabread.github.io/AntimatterDimensions/)
+# [Antimatter Dimensions: Celestial Mode](https://miabread.github.io/AntimatterDimensions/)
 
-Ever wanted to start the game with continuum enabled? Well now you can! This mod turns any hard coded unlock condition into a save file flag that can be much more easily modified.
+Work In Progress save editor for AD!
 
-Some things you can do:
+Some things you can do currently:
 - Enable continuum whenever
 - Show all tabs or subtabs    
 - Unlock celestials
-- Unlock lot of other misc things
 
-## How to Use
+This list is planned to grow!
+
+## Raw Editor Tab
+
+A new tab has been added to directly edit the raw values of your save file. Right now only boolean values can be modified but complete capabilities are in the works.
+
+## Force Flags
 
 "Force flags" have been injected into various unlock conditions throughout the game. When set to true, said unlock will always be true regardless of it's original condition. You can toggle these in the brand new Force tab located at the end of the tab list. These can also be modified in the console by messing around with the newly added `player.force` object.
 
@@ -18,4 +23,4 @@ Obviously none of this was intended by the developers, so keep that in mind. I'm
 
 ## Future 
 
-More force flags will be added as I dig into the code. Feel free to leave an issue or pull request if there's anything you'd like added!
+More features will be added as I dig into the code. Feel free to leave an issue or pull request if there's anything you'd like added!
