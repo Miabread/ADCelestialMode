@@ -57,6 +57,7 @@ window.player = {
         isUnlocked: false,
         continuumUnlocked: false,
         annihilationUnlocked: false,
+        firstDMDUnlocked: false,
       },
       pelle: {
         isUnlocked: false,

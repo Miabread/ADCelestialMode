@@ -35,6 +35,7 @@ export class DarkMatterDimensionState extends DimensionState {
   }
 
   get isUnlocked() {
+    if (this.tier === 1 && player.force.celestials.laitela.firstDMDUnlocked) return true;
     return this.unlockUpgrade.isBought;
   }
 
