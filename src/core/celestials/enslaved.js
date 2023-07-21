@@ -70,7 +70,7 @@ export const Enslaved = {
   // We assume that the situations where you can't modify time storage settings (of either type) are exactly the cases
   // where they have also been explicitly disabled via other game mechanics. This also reduces UI boilerplate code.
   // Note that we force time storage when auto-releasing, as not doing so caused a lot of poor usability issues
-  get isStoringGameTime() {    
+  get isStoringGameTime() {
     if (player.force.celestials.enslaved.isStoringGameTime) return true;
     return this.canModifyGameTimeStorage && (this.isAutoReleasing || player.celestials.enslaved.isStoring);
   },
