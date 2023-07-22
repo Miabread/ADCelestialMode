@@ -46,8 +46,10 @@ export default {
             if (this.secret) {
                 for (const item of SecretAchievements.all) item.unlock();
             } else {
-                for (const item of Achievements.all) item.unlock();
-                Achievement(188).lock();
+                for (const item of Achievements.all) {
+                    if (item.id === 188) continue;
+                    item.unlock();
+                }
             }
         },
         lockAll() {
