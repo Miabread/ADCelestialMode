@@ -168,7 +168,15 @@ export const tabs = [
         component: "SecretAchievementTab",
         id: 1,
         hidable: true,
-      }
+      },
+      {
+        key: "achievement editor",
+        name: 'Achievement Editor',
+        symbol: '<span style="color: var(--color-celmode)">λ</span>',
+        component: "AchievementEditorTab",
+        id: 2,
+        hidable: true
+      },
     ]
   },
   {

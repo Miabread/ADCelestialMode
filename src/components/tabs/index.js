@@ -41,8 +41,7 @@ import TimeDilationTab from "./time-dilation/TimeDilationTab";
 import TimeDimensionsTab from "./time-dimensions/TimeDimensionsTab";
 import TimeStudiesTab from "./time-studies/TimeStudiesTab";
 import VTab from "./celestial-v/VTab";
-import CelModeTab from "./celmode/CelModeTab";
-import RawEditorTab from "./celmode/RawEditorTab";
+import { celmodeTabs } from "./celmode/index";
 
 const TabComponents = {
   AntimatterDimensionsTab,
@@ -87,8 +86,7 @@ const TabComponents = {
   CelestialNavigationTab,
   ShopTab,
   MultiplierBreakdownTab,
-  CelModeTab,
-  RawEditorTab,
+  ...celmodeTabs,
 };
 
 export default TabComponents;

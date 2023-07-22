@@ -9,6 +9,9 @@ import { GlyphTypes } from "./glyph-effects";
 // This is actually reassigned when importing saves
 // eslint-disable-next-line prefer-const
 window.player = {
+  celmode: {
+    collapsed: {},
+  },
   rawEditor: {
     openStates: {},
   },

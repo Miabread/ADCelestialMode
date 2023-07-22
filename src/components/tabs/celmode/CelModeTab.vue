@@ -8,12 +8,6 @@ export default {
   },
   created() {
     this.dev = dev;
-  },
-  methods: {
-    unlockAchievements() {
-      dev.giveAllAchievements();
-      Achievement(188).lock();
-    }
   }
 };
 </script>
@@ -35,12 +29,6 @@ export default {
     <h2>These methods were created by the AD developers.</h2>
     <div class="l-options-grid">
       <div class="l-options-grid__row">
-        <OptionsButton
-          class="o-primary-btn--option"
-          @click="unlockAchievements()"
-        >
-          Give All Achievements
-        </OptionsButton>
         <OptionsButton
           class="o-primary-btn--option"
           onclick="dev.respecPerks()"

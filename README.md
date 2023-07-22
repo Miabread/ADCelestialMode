@@ -6,6 +6,7 @@ Some things you can do currently:
 - Enable continuum whenever
 - Show all tabs or subtabs    
 - Unlock celestials
+- Manage individual achievements 
 
 This list is planned to grow!
 
