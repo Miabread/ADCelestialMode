@@ -8,6 +8,12 @@ export default {
   },
   created() {
     this.dev = dev;
+  },
+  methods: {
+    unlockAchievements() {
+      dev.giveAllAchievements();
+      Achievement(188).lock();
+    }
   }
 };
 </script>
@@ -31,7 +37,7 @@ export default {
       <div class="l-options-grid__row">
         <OptionsButton
           class="o-primary-btn--option"
-          onclick="() => { dev.giveAllAchievements(); dev.removeAch(188) }"
+          @click="unlockAchievements()"
         >
           Give All Achievements
         </OptionsButton>

@@ -35,6 +35,10 @@ export default {
     }
   },
   methods: {
+    update() {
+      if (this.path.length === 0) return;
+      this.open = player.rawEditor.openStates[this.label] ?? false;
+    },
     is(key, type) {
         const value =  mb([...this.path, key])(player);
         if (value instanceof Decimal) return type === 'decimal';
@@ -53,7 +57,7 @@ export default {
 
 <template>
   <div>
-    <PrimaryToggleButton 
+    <PrimaryToggleButton
       v-if="path.length > 0"
       :label="label" 
       :value="open" @input="open = $event"  
