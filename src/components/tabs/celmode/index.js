@@ -1,5 +1,5 @@
 import CelModeTab from "./CelModeTab";
-import RawEditorTab from "./RawEditorTab";
+import RawEditorTab from "./raw/RawEditorTab";
 import AchievementEditorTab from './achievements/AchievementEditorTab';
 
 export const celmodeTabs = { 
