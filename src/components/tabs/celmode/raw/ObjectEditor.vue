@@ -1,5 +1,5 @@
 <script>
-import PrimaryToggleButton from "@/components/PrimaryToggleButton";
+import CelmodeToggleButton from "../components/CelmodeToggleButton";
 import BooleanEditor from "./BooleanEditor.vue";
 
 const mb=p=>o=>p.map(c=>o=(o||{})[c])&&o;
@@ -7,7 +7,7 @@ const mb=p=>o=>p.map(c=>o=(o||{})[c])&&o;
 export default {
   name: "ObjectEditor",
   components: {
-    PrimaryToggleButton,BooleanEditor
+    CelmodeToggleButton,BooleanEditor
   },
   props: ['path'],
   data() {
@@ -26,7 +26,7 @@ export default {
   },
   computed: {
     label() {
-        return this.path.join('.');
+        return this.path[this.path.length - 1];
     }
   },
   watch: {
@@ -57,12 +57,13 @@ export default {
 
 <template>
   <div>
-    <PrimaryToggleButton
+    <CelmodeToggleButton
       v-if="path.length > 0"
       :label="label" 
       :value="open" @input="open = $event"  
-      off="▶" on="▼" />
-    <div v-if="open" v-for="key in keys">
+      off="▶" on="▼" 
+      :colors="false"/>
+    <div v-if="open" v-for="key in keys" class="nest">
         <br/>
         <ObjectEditor 
             v-if="is(key, 'object')"
@@ -79,5 +80,7 @@ export default {
 </template>
 
 <style scoped>
-
+.nest {
+  margin-left: 5em;
+}
 </style>

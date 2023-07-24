@@ -1,10 +1,10 @@
 <script>
-import PrimaryButton from "@/components/PrimaryButton";
+import CelmodeButton from "./CelmodeButton";
 
 export default {
   name: "CelmodeToggleButton",
   components: {
-    PrimaryButton
+    CelmodeButton
   },
   props: {
     label: {
@@ -26,10 +26,17 @@ export default {
       type: Boolean,
       required: true
     },
+    colors: {
+      type: Boolean,
+      required: false,
+      default: true,
+    }
   },
   computed: {
     classNames() {
-        return 'button ' + (this.value ? 'on' : 'off');
+      let classNames = 'button ';
+      if(this.colors) classNames += this.value ? 'on' : 'off';
+      return classNames;
     },
     displayText() {
       return `${this.label} ${this.value ? this.on : this.off}`;
@@ -39,18 +46,24 @@ export default {
 </script>
 
 <template>
-    <PrimaryButton
+    <CelmodeButton
         v-bind="$attrs"
         @click="emitInput(!value)"
         :class="classNames"
     >
         <span class="label">{{ displayText }}</span>
-  </PrimaryButton>
+  </CelmodeButton>
 </template>
 
 <style scoped>
-.button {
-    background-color: var(--color-prestige--accent);
+.on {
+    color: var(--color-good);
+    border-color: var(--color-good);
+}
+
+.off {
+    color: var(--color-bad);
+    border-color: var(--color-bad);
 }
 
 .button:hover.on {
@@ -61,15 +74,5 @@ export default {
 .button:hover.off {
     background-color: var(--color-bad);
     color: var(--color-prestige--accent);
-}
-
-.on {
-    color: var(--color-good);
-    border-color: var(--color-good);
-}
-
-.off {
-    color: var(--color-bad);
-    border-color: var(--color-bad);
 }
 </style>

@@ -1,23 +1,18 @@
 <script>
-import PrimaryToggleButton from "@/components/PrimaryToggleButton";
+import CelmodeToggleButton from "../components/CelmodeToggleButton";
 
 const mb=p=>o=>p.map(c=>o=(o||{})[c])&&o;
 
 export default {
   name: "BooleanEditor",
   components: {
-    PrimaryToggleButton
+    CelmodeToggleButton
   },
   props: ['path', 'name'],
   data() {
     return { 
         value: mb(this.path)(player)[this.name],
     };
-  },
-  computed: {
-    label() {
-        return [...this.path, this.name].join('.');
-    }
   },
   watch: {
     value() {
@@ -33,8 +28,8 @@ export default {
 </script>
 
 <template>
-  <PrimaryToggleButton 
-    :label="label" 
+  <CelmodeToggleButton 
+    :label="name" 
     :value="value" 
     @input="value = $event" />
 </template>

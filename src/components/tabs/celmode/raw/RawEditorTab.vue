@@ -1,11 +1,11 @@
 <script>
 import ObjectEditor from './ObjectEditor.vue';
-import PrimaryButton from "@/components/PrimaryButton";
+import CelmodeButton from "../components/CelmodeButton";
 
 export default {
   name: "RawEditorTab",
   components: {
-    ObjectEditor,PrimaryButton
+    ObjectEditor,CelmodeButton
   },
   methods: {
     closeAll() {
@@ -16,17 +16,20 @@ export default {
 </script>
 
 <template>
-  <div>
-    <PrimaryButton
+  <div class="container">
+    <br>
+    <CelmodeButton
       @click="closeAll()"
     >
       Close All
-    </PrimaryButton>
-    <br><br><br>
+    </CelmodeButton>
     <ObjectEditor :path="[]"/>
   </div>
 </template>
 
 <style scoped>
-
+.container {
+  text-align: start;
+  margin-left: 20vw;
+}
 </style>
