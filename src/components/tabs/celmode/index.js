@@ -1,4 +1,4 @@
-import CelModeTab from "./CelModeTab";
+import CelModeTab from "./general/CelModeTab";
 import RawEditorTab from "./raw/RawEditorTab";
 import AchievementEditorTab from './achievements/AchievementEditorTab';
 
