@@ -9349,7 +9349,7 @@ input.o-automator-block-input {
 }
 
 .l-celmode-panel-container {
-  width: 98rem;
+  width: 80%;
   border: var(--var-border-width, 0.2rem) solid var(--color-celmode);
   border-radius: var(--var-border-radius, 0.5rem);
   margin: 1rem;
