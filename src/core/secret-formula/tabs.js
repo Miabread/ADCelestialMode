@@ -171,7 +171,7 @@ export const tabs = [
       },
       {
         key: "achievement editor",
-        name: 'Achievement Editor',
+        name: "Achievement Editor",
         symbol: '<span style="color: var(--color-celmode)">λ</span>',
         component: "AchievementEditorTab",
         id: 2,

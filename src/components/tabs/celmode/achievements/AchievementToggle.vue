@@ -7,8 +7,8 @@ export default {
   components: { CelmodeToggleButton },
   props: {
     id: {
-        type: Number,
-        required: true
+      type: Number,
+      required: true
     },
     secret: {
       type: Boolean,
@@ -17,13 +17,13 @@ export default {
   },
   data() {
     return {
-        isUnlocked: false,
+      isUnlocked: false,
     };
   },
   computed: {
     label() {
-      if (this.secret) return this.id.toString()
-      return this.id.toString().padStart(3, '0');
+      if (this.secret) return this.id.toString();
+      return this.id.toString().padStart(3, "0");
     },
     getter() {
       return this.secret ? SecretAchievement : Achievement;
@@ -31,25 +31,26 @@ export default {
   },
   methods: {
     update() {
-        this.isUnlocked = this.getter(this.id).isUnlocked;
+      this.isUnlocked = this.getter(this.id).isUnlocked;
     },
     set(unlocked) {
-        if (unlocked) {
-          this.getter(this.id).unlock();
-        } else {
-          this.getter(this.id).lock();
-        }
+      if (unlocked) {
+        this.getter(this.id).unlock();
+      } else {
+        this.getter(this.id).lock();
+      }
     },
   },
 };
 </script>
 
 <template>
-    <CelmodeToggleButton
+  <CelmodeToggleButton
     class="space"
-    :label="label" 
-    :value="isUnlocked" 
-    @input="set" />
+    :label="label"
+    :value="isUnlocked"
+    @input="set"
+  />
 </template>
 
 <style scoped>

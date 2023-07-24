@@ -34,8 +34,8 @@ export default {
   },
   computed: {
     classNames() {
-      let classNames = 'button ';
-      if(this.colors) classNames += this.value ? 'on' : 'off';
+      let classNames = "button ";
+      if (this.colors) classNames += this.value ? "on" : "off";
       return classNames;
     },
     displayText() {
@@ -46,12 +46,12 @@ export default {
 </script>
 
 <template>
-    <CelmodeButton
-        v-bind="$attrs"
-        @click="emitInput(!value)"
-        :class="classNames"
-    >
-        <span class="label">{{ displayText }}</span>
+  <CelmodeButton
+    v-bind="$attrs"
+    :class="classNames"
+    @click="emitInput(!value)"
+  >
+    <span class="label">{{ displayText }}</span>
   </CelmodeButton>
 </template>
 

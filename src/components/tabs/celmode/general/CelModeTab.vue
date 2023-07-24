@@ -15,14 +15,17 @@ export default {
     <h1 class="celmode-header">
       Antimatter Dimensions: Celestial Mode
     </h1>
-    <h2 class="celmode-header">Created by Miabread</h2>
+    <h2 class="celmode-header">
+      Created by Miabread
+    </h2>
     <h2>
       <a
         href="https://github.com/Miabread/ADCelestialMode"
-        target="_blank">GitHub</a>
+        target="_blank"
+      >GitHub</a>
     </h2>
 
-    <DevToolsPanel/>
+    <DevToolsPanel />
   </div>
 </template>
 

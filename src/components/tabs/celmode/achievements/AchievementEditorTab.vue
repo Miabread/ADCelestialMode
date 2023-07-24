@@ -1,17 +1,16 @@
 <script>
-
-import AchievementsPanel from './AchievementsPanel.vue';
+import AchievementsPanel from "./AchievementsPanel.vue";
 
 export default {
-    name: "AchievementEditorTab",
-    components: { AchievementsPanel }
+  name: "AchievementEditorTab",
+  components: { AchievementsPanel }
 };
 </script>
 
 <template>
   <div class="l-celmode-editor-tab ">
-      <AchievementsPanel :secret="false"/>
-      <AchievementsPanel :secret="true"/>
+    <AchievementsPanel :secret="false" />
+    <AchievementsPanel :secret="true" />
   </div>
 </template>
 

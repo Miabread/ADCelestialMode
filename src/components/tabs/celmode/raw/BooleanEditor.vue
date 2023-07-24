@@ -1,22 +1,22 @@
 <script>
 import CelmodeToggleButton from "../components/CelmodeToggleButton";
 
-const mb=p=>o=>p.map(c=>o=(o||{})[c])&&o;
+const mb = p => o => p.map(c => o = (o || {})[c]) && o;
 
 export default {
   name: "BooleanEditor",
   components: {
     CelmodeToggleButton
   },
-  props: ['path', 'name'],
+  props: ["path", "name"],
   data() {
-    return { 
-        value: mb(this.path)(player)[this.name],
+    return {
+      value: mb(this.path)(player)[this.name],
     };
   },
   watch: {
     value() {
-      mb(this.path)(player)[this.name] = !!this.value;
+      mb(this.path)(player)[this.name] = Boolean(this.value);
     }
   },
   methods: {
@@ -28,10 +28,11 @@ export default {
 </script>
 
 <template>
-  <CelmodeToggleButton 
-    :label="name" 
-    :value="value" 
-    @input="value = $event" />
+  <CelmodeToggleButton
+    :label="name"
+    :value="value"
+    @input="value = $event"
+  />
 </template>
 
 <style scoped>

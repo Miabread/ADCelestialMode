@@ -1,32 +1,33 @@
 <script>
 import CelmodeToggleButton from "../components/CelmodeToggleButton";
+
 import BooleanEditor from "./BooleanEditor.vue";
 
-const mb=p=>o=>p.map(c=>o=(o||{})[c])&&o;
+const mb = p => o => p.map(c => o = (o || {})[c]) && o;
 
 export default {
   name: "ObjectEditor",
   components: {
-    CelmodeToggleButton,BooleanEditor
+    CelmodeToggleButton, BooleanEditor
   },
-  props: ['path'],
+  props: ["path"],
   data() {
-    // Treat top level specially 
+    // Treat top level specially
     if (this.path.length === 0) {
       return {
         open: true,
-        keys: Object.keys(player).filter(it => it !== 'rawEditor'),
-      }
+        keys: Object.keys(player).filter(it => it !== "rawEditor"),
+      };
     }
-    
-    return { 
-        open: player.rawEditor.openStates[this.path.join('.')] ?? false, 
-        keys: Object.keys(mb(this.path)(player)) 
+
+    return {
+      open: player.rawEditor.openStates[this.path.join(".")] ?? false,
+      keys: Object.keys(mb(this.path)(player))
     };
   },
   computed: {
     label() {
-        return this.path[this.path.length - 1];
+      return this.path[this.path.length - 1];
     }
   },
   watch: {
@@ -40,16 +41,16 @@ export default {
       this.open = player.rawEditor.openStates[this.label] ?? false;
     },
     is(key, type) {
-        const value =  mb([...this.path, key])(player);
-        if (value instanceof Decimal) return type === 'decimal';
-        if (value instanceof Array) return type === 'array';
-        return type === typeof value;
+      const value = mb([...this.path, key])(player);
+      if (value instanceof Decimal) return type === "decimal";
+      if (value instanceof Array) return type === "array";
+      return type === typeof value;
     },
     getValue(key) {
-        const value =  mb([...this.path, key])(player);
-        if (value instanceof Decimal) return 'decimal';
-        if (value instanceof Array) return 'array';
-        return typeof value;
+      const value = mb([...this.path, key])(player);
+      if (value instanceof Decimal) return "decimal";
+      if (value instanceof Array) return "array";
+      return typeof value;
     }
   }
 };
@@ -59,22 +60,29 @@ export default {
   <div>
     <CelmodeToggleButton
       v-if="path.length > 0"
-      :label="label" 
-      :value="open" @input="open = $event"  
-      off="▶" on="▼" 
-      :colors="false"/>
-    <div v-if="open" v-for="key in keys" class="nest">
-        <br/>
-        <ObjectEditor 
-            v-if="is(key, 'object')"
-            :path="[...path, key]"
-            />
-        <BooleanEditor
-            v-else-if="is(key, 'boolean')"
-            :name="key"
-            :path="path"
-            />
-        <span v-else>{{ key }}: {{ getValue(key) }}</span>
+      :label="label"
+      :value="open"
+      off="▶"
+      on="▼"
+      :colors="false"
+      @input="open = $event"
+    />
+    <div
+      v-for="key in keys"
+      v-if="open"
+      class="nest"
+    >
+      <br>
+      <ObjectEditor
+        v-if="is(key, 'object')"
+        :path="[...path, key]"
+      />
+      <BooleanEditor
+        v-else-if="is(key, 'boolean')"
+        :name="key"
+        :path="path"
+      />
+      <span v-else>{{ key }}: {{ getValue(key) }}</span>
     </div>
   </div>
 </template>

@@ -1,11 +1,12 @@
 <script>
-import ObjectEditor from './ObjectEditor.vue';
 import CelmodeButton from "../components/CelmodeButton";
+
+import ObjectEditor from "./ObjectEditor.vue";
 
 export default {
   name: "RawEditorTab",
   components: {
-    ObjectEditor,CelmodeButton
+    ObjectEditor, CelmodeButton
   },
   methods: {
     closeAll() {
@@ -23,7 +24,7 @@ export default {
     >
       Close All
     </CelmodeButton>
-    <ObjectEditor :path="[]"/>
+    <ObjectEditor :path="[]" />
   </div>
 </template>
 
