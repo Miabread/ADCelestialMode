@@ -1,9 +1,10 @@
 <script>
-import PrimaryToggleButton from "@/components/PrimaryToggleButton";
 import { Achievement, SecretAchievement } from "../../../../core/globals";
+import CelmodeToggleButton from "../components/CelmodeToggleButton.vue";
 
 export default {
   name: "AchievementsToggle",
+  components: { CelmodeToggleButton },
   props: {
     id: {
         type: Number,
@@ -14,7 +15,6 @@ export default {
       required: true,
     }
   },
-  components: { PrimaryToggleButton },
   data() {
     return {
         isUnlocked: false,
@@ -24,9 +24,6 @@ export default {
     label() {
       if (this.secret) return this.id.toString()
       return this.id.toString().padStart(3, '0');
-    },
-    style() {
-      return this.isUnlocked ? 'color: var(--color-good)' : 'color: var(--color-bad)';
     },
     getter() {
       return this.secret ? SecretAchievement : Achievement;
@@ -48,14 +45,11 @@ export default {
 </script>
 
 <template>
-    <PrimaryToggleButton 
+    <CelmodeToggleButton
     class="space"
-    :style="style"
     :label="label" 
     :value="isUnlocked" 
-    @input="set" 
-    on="✔"
-    off="✘"/>
+    @input="set" />
 </template>
 
 <style scoped>

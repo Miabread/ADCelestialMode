@@ -1,12 +1,13 @@
 <script>
 
 import AchievementToggle from './AchievementToggle.vue';
-import PrimaryButton from '../../../PrimaryButton.vue';
+import CelmodeButton from "../components/CelmodeButton.vue";
 import { Achievement, Achievements, SecretAchievements } from '../../../../core/globals';
 
 
 export default {
     name: "AchievementsPanel",
+    components: { AchievementToggle, CelmodeButton },
     props: {
         secret: {
             type: Boolean,
@@ -60,7 +61,6 @@ export default {
             }
         }
     },
-    components: { AchievementToggle, PrimaryButton }
 };
 </script>
 
@@ -79,9 +79,9 @@ export default {
           class="l-celmode-content-container"
         >
             <div style="margin: 1em">
-                <PrimaryButton @click="unlockAll">Unlock All</PrimaryButton>
+                <CelmodeButton @click="unlockAll">Unlock All</CelmodeButton>
                 <span style="margin: 1em"/>
-                <PrimaryButton @click="lockAll">Lock All</PrimaryButton>
+                <CelmodeButton @click="lockAll">Lock All</CelmodeButton>
             </div>
             <div v-for="row in allRows()">
                 <span v-for="item in row">
