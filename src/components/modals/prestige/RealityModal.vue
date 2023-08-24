@@ -91,7 +91,7 @@ export default {
       this.hasFilter = EffarigUnlock.glyphFilter.isUnlocked;
       this.level = gainedGlyphLevel().actualLevel;
       this.simRealities = 1 + simulatedRealityCount(false);
-      this.hasSpace = GameCache.glyphInventorySpace.value > this.simRealities;
+      this.hasSpace = GameCache.glyphInventorySpace.value >= this.simRealities;
       const simRMGained = MachineHandler.gainedRealityMachines.times(this.simRealities);
       this.realityMachines.copyFrom(simRMGained.clampMax(MachineHandler.distanceToRMCap));
       this.shardsGained = Effarig.shardsGained * (simulatedRealityCount(false) + 1);
@@ -117,8 +117,7 @@ export default {
     },
     getGlyphs() {
       this.canRefresh = true;
-      this.glyphs = GlyphSelection.glyphList(
-        GlyphSelection.choiceCount, gainedGlyphLevel(), { isChoosingGlyph: false });
+      this.glyphs = GlyphSelection.upcomingGlyphs;
     },
     select(index) {
       this.selectedGlyph = index;
